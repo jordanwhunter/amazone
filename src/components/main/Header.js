@@ -1,7 +1,12 @@
+// Dependencies
 import React from 'react';
 import amazone from '../../images/amazone.png';
 
+// Styles
 import '../../styles/Header.css';
+
+// Icons
+import SearchIcon from '@material-ui/icons/Search';
 
 export default function Header() {
   return (
@@ -19,6 +24,7 @@ export default function Header() {
           className='header-search-input'
           type='text'
         />
+        <SearchIcon className='header-search-icon' />
       </div>
 
       {/* Children */}
