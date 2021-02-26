@@ -3,7 +3,7 @@ import React from 'react';
 import amazone from '../../images/amazone.png';
 
 // Styles
-import '../../styles/Header.css';
+import '../../styles/main/Header.css';
 
 // Icons
 import SearchIcon from '@material-ui/icons/Search';
