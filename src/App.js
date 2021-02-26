@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/main/Header';
+import Home from './components/main/Home';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
 
       {/* Home */}
+      <Home />
     </div>
   );
 };
