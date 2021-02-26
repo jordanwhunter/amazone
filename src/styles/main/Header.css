@@ -65,3 +65,8 @@
   align-items: center;
   color: white;
 }
+
+.header-cart-count {
+  margin-left: 10px;
+  margin-right: 10px;
+}
