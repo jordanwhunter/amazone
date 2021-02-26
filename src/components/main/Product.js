@@ -4,6 +4,7 @@ import React from 'react';
 // Icons
 
 // Styles
+import '../../styles/main/Product.css';
 
 export default function Product() {
   return (
