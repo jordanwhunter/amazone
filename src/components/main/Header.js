@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import amazone from '../../images/amazone-white.png';
+import amazone from '../../images/logo/amazone-white.png';
 
 // Icons
 import SearchIcon from '@material-ui/icons/Search';
