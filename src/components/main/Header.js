@@ -2,11 +2,12 @@
 import React from 'react';
 import amazone from '../../images/amazone.png';
 
-// Styles
-import '../../styles/main/Header.css';
-
 // Icons
 import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+
+// Styles
+import '../../styles/main/Header.css';
 
 export default function Header() {
   return (
@@ -43,6 +44,11 @@ export default function Header() {
           {/* Your Prime */}
           <span className='header-option-line-one'>Your</span>
           <span className='header-option-line-two'>Prime</span>
+        </div>
+        <div className='header-option-cart'>
+          {/* Cart */}
+          <ShoppingBasketIcon />
+          <span className='header-option-line-two header-cart-count'>0</span>
         </div>
       </div>
     </div>
