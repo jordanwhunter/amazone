@@ -4,6 +4,7 @@ import React from 'react';
 // Icons
 
 // Styles
+import '../../styles/main/Home.css';
 
 export default function Home() {
   return (
