@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import Product from './Product';
 
 // Icons
 
@@ -18,6 +19,7 @@ export default function Home() {
 
         <div className='home-row'>
           {/* Product */}
+          <Product />
           {/* Product */}
         </div>
 
@@ -26,7 +28,7 @@ export default function Home() {
           {/* Product */}
           {/* Product */}
         </div>
-        
+
         <div className='home-row'>
           {/* Product */}
         </div>
