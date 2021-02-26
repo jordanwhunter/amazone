@@ -1,0 +1,19 @@
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #131921;
+  /* Sticks to top of page */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-logo {
+  width: 100px;
+  /* Keeps aspect ratio */
+  object-fit: contain;
+  /* 0 on top/bottom, 20px on left/right */
+  margin: 0 20px;
+  margin-top: 18px;
+}
