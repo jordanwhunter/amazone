@@ -8,8 +8,12 @@ import '../../styles/main/Product.css';
 
 export default function Product() {
   return (
-    <div>
-      Hello world. I am the product component.
+    <div className='product'>
+      {/* Title */}
+      {/* Price */}
+      {/* Star rating */}
+      {/* Image */}
+      {/* Add to cart button */}
     </div>
   )
 };
