@@ -50,3 +50,18 @@
   margin-right: 10px;
   color: white;
 }
+
+.header-option-line-one {
+  font-size: 10px;
+}
+
+.header-option-line-two {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.header-option-cart {
+  display: flex;
+  align-items: center;
+  color: white;
+}
