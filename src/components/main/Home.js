@@ -3,6 +3,8 @@ import React from 'react';
 import Product from './Product';
 import ctci from '../../images/products/ctci.png';
 import sideTrak from '../../images/products/sideTrack.jpg';
+import playstation from '../../images/products/playstation5.jpg';
+import breville from '../../images/products/breville-bes870xl.jpg'
 
 // Icons
 
@@ -20,7 +22,6 @@ export default function Home() {
         />
 
         <div className='home-row'>
-          {/* Product */}
           <Product 
             title='Cracking the Coding Interview - 6th Edition'
             dollars={23}
@@ -28,7 +29,6 @@ export default function Home() {
             image={ctci}
             rating={4}
           />
-          {/* Product */}
           <Product
             title='SideTrak Swivel Triple Portable Monitor for Laptop'
             dollars={629}
@@ -39,16 +39,24 @@ export default function Home() {
         </div>
 
         <div className='home-row'>
-          {/* Product */}
-          <Product />
-          {/* Product */}
-          <Product />
-          {/* Product */}
+          <Product
+            title='PlayStation 5 Console'
+            dollars={499}
+            cents={99}
+            image={playstation}
+            rating={5}
+          />
+          <Product
+            title='Breville BES870XL Espresso Machine'
+            dollars={699}
+            cents={95}
+            image={breville}
+            rating={4}
+          />
           <Product />
         </div>
 
         <div className='home-row'>
-          {/* Product */}
           <Product />
         </div>
       </div>
