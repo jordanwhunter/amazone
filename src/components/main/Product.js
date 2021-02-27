@@ -6,7 +6,7 @@ import React from 'react';
 // Styles
 import '../../styles/main/Product.css';
 
-export default function Product({ title, image, price, rating }) {
+export default function Product({ title, image, dollars, cents, rating }) {
   return (
     <div className='product'>
       <div className='product-info'>
@@ -15,12 +15,20 @@ export default function Product({ title, image, price, rating }) {
 
         <p className='product-price'>
           {/* Price */}
-          <small>$</small><strong>{price}</strong>
+          <small>$</small>
+          <strong>
+            {dollars}
+            <sup>
+              <small>{cents}</small>
+            </sup> 
+          </strong>
         </p>
 
         <div className='product-rating'>
           {/* Star rating */}
-          <p>{'⭐️'.repeat(rating)}</p>
+          <small>
+            <p>{'⭐️'.repeat(rating)}</p>
+          </small>
         </div>
       </div>
 
