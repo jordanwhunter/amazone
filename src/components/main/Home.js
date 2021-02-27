@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react';
 import Product from './Product';
+import ctci from '../../images/products/ctci.png';
 
 // Icons
 
@@ -19,7 +20,12 @@ export default function Home() {
 
         <div className='home-row'>
           {/* Product */}
-          <Product />
+          <Product 
+            title='Cracking the Coding Interview'
+            price={23.99}
+            image={ctci}
+            rating={4.5}
+          />
           {/* Product */}
           <Product />
         </div>
