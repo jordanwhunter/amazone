@@ -14,11 +14,11 @@ export default function Product() {
     <div className='product'>
       <div className='product-info'>
         {/* Title */}
-        <p>Title</p>
+        <p>Cracking the Coding Interview</p>
 
         <p className='product-price'>
           {/* Price */}
-          <small>$</small><strong>00.00</strong>
+          <small>$</small><strong>23.99</strong>
         </p>
 
         <div className='product-rating'>
@@ -37,6 +37,7 @@ export default function Product() {
         alt='Cracking the Coding Interview'
       />
       {/* Add to cart button */}
+      <button>Add to Cart</button>
     </div>
   )
 };
