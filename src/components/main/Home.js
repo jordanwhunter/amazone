@@ -2,6 +2,7 @@
 import React from 'react';
 import Product from './Product';
 import ctci from '../../images/products/ctci.png';
+import sideTrak from '../../images/products/sideTrack.jpg';
 
 // Icons
 
@@ -21,13 +22,20 @@ export default function Home() {
         <div className='home-row'>
           {/* Product */}
           <Product 
-            title='Cracking the Coding Interview'
-            price={23.99}
+            title='Cracking the Coding Interview - 6th Edition'
+            dollars={23}
+            cents={99}
             image={ctci}
-            rating={4.5}
+            rating={4}
           />
           {/* Product */}
-          <Product />
+          <Product
+            title='SideTrak Swivel Triple Portable Monitor for Laptop'
+            dollars={629}
+            cents={99}
+            image={sideTrak}
+            rating={5}
+          />
         </div>
 
         <div className='home-row'>
