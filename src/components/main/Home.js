@@ -21,6 +21,7 @@ export default function Home() {
           {/* Product */}
           <Product />
           {/* Product */}
+          <Product />
         </div>
 
         <div className='home-row'>
