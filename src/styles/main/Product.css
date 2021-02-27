@@ -39,5 +39,5 @@
 }
 
 .product-rating {
-  color: gold
+  display: flex;
 }
