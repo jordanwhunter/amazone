@@ -8,13 +8,12 @@ function App() {
   return (
     <Router>
       <div className='app'>
+        <Header />
         <Switch>
           <Route exact path='/'>
-            <Header />
             <Home />
           </Route>
           <Route path='/checkout'>
-            <Header />
             <Checkout />
           </Route>
         </Switch> 
