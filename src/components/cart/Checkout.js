@@ -6,7 +6,7 @@ import '../../styles/cart/Checkout.css';
 
 export default function Checkout() {
   return (
-    <div>
+    <div className='checkout'>
       Hello world! I'm the Checkout component.
     </div>
   )
