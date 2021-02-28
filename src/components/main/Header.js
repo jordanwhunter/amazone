@@ -48,11 +48,13 @@ export default function Header() {
           <span className='header-option-line-one'>Your</span>
           <span className='header-option-line-two'>Prime</span>
         </div>
-        <div className='header-option-cart'>
-          {/* Cart */}
-          <ShoppingBasketIcon />
-          <span className='header-option-line-two header-cart-count'>0</span>
-        </div>
+        <Link to='/checkout'>
+          <div className='header-option-cart'>
+            {/* Cart */}
+            <ShoppingBasketIcon />
+            <span className='header-option-line-two header-cart-count'>0</span>
+          </div>
+        </Link>
       </div>
     </div>
   )
