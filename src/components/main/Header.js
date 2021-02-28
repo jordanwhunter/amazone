@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { Link } from 'react-router-dom';
 import amazone from '../../images/logo/amazone-white.png';
 
 // Icons
@@ -12,12 +13,14 @@ import '../../styles/main/Header.css';
 export default function Header() {
   return (
     <div className='header'>
-      {/* Logo */}
-      <img 
-        className='header-logo'
-        src={amazone} 
-        alt='Amazone'
-      />
+      <Link to='/'>
+        {/* Logo */}
+        <img 
+          className='header-logo'
+          src={amazone} 
+          alt='Amazone'
+        />
+      </Link>
 
       {/* Search box */}
       <div className='header-search'>
