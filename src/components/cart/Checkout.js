@@ -14,9 +14,15 @@ export default function Checkout() {
           src={ad}
           alt='Ocean Credit Card Ad'
         />
+        <div>
+          <h2 className='checkout-title'>
+            Your Shopping Cart
+          </h2>
+        </div>
       </div>
-      <div className='checkout-right'>
 
+      <div className='checkout-right'>
+        <h2>Subtotal</h2>
       </div>
     </div>
   )
