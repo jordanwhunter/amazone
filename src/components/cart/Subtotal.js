@@ -14,6 +14,7 @@ export default function Subtotal() {
   return (
     <div className='subtotal'>
       <CurrencyFormat
+        // value acts as a render prop
         renderText={(value) => (
           <>
             <p>
