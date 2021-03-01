@@ -35,9 +35,7 @@ export default function Product({ id, title, image, price, rating }) {
         <p className='product-price'>
           {/* Price */}
           <small>$</small>
-          <strong>
-            {price}
-          </strong>
+          <strong>{price}</strong>
         </p>
 
         <div className='product-rating'>
