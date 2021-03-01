@@ -7,10 +7,10 @@ import { useStateValue } from '../../contexts/StateContext';
 // Styles
 import '../../styles/main/Product.css';
 
-export default function Product({ id, title, image, dollars, cents, rating }) {
+export default function Product({ id, title, image, price, rating }) {
   const [state, dispatch] = useStateValue();
 
-  // console.log('cart contains:', state.cart)
+  console.log('cart contains:', state.cart)
 
   const addToCart = () => {
     // dispatch item into data layer
@@ -20,8 +20,7 @@ export default function Product({ id, title, image, dollars, cents, rating }) {
         id: id,
         title: title, 
         image: image,
-        dollars: dollars,
-        cents: cents,
+        price: price,
         rating: rating
       }
     })
@@ -37,10 +36,7 @@ export default function Product({ id, title, image, dollars, cents, rating }) {
           {/* Price */}
           <small>$</small>
           <strong>
-            {dollars}
-            <sup>
-              <small>{cents}</small>
-            </sup> 
+            {price}
           </strong>
         </p>
 
