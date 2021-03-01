@@ -1,18 +1,22 @@
 // Dependencies
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
+import { useStateValue } from '../../contexts/StateContext';
 
 // Styles
 import '../../styles/cart/Subtotal.css';
 
 export default function Subtotal() {
+  const [state] = useStateValue();
+  const { cart } = state;
+
   return (
     <div className='subtotal'>
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p>
-              Subtotal (0 items):
+              Subtotal ({cart?.length} items):
               <strong>{` ${value}`}</strong>
             </p>
             <small className='subtotal-gift'>
