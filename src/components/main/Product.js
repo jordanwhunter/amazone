@@ -1,12 +1,32 @@
 // Dependencies
 import React from 'react';
+import { useStateValue } from '../../contexts/StateContext';
 
 // Icons
 
 // Styles
 import '../../styles/main/Product.css';
 
-export default function Product({ title, image, dollars, cents, rating }) {
+export default function Product({ id, title, image, dollars, cents, rating }) {
+  const [state, dispatch] = useStateValue();
+
+  // console.log('cart contains:', state.cart)
+
+  const addToCart = () => {
+    // dispatch item into data layer
+    dispatch({
+      type: 'ADD_TO_CART',
+      item: {
+        id: id,
+        title: title, 
+        image: image,
+        dollars: dollars,
+        cents: cents,
+        rating: rating
+      }
+    })
+  };
+  
   return (
     <div className='product'>
       <div className='product-info'>
@@ -38,7 +58,7 @@ export default function Product({ title, image, dollars, cents, rating }) {
         alt={title}
       />
       {/* Add to cart button */}
-      <button>Add to Cart</button>
+      <button onClick={addToCart}>Add to Cart</button>
     </div>
   )
 };
