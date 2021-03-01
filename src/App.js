@@ -5,6 +5,7 @@ import reducer, { initialState } from './reducer';
 import Header from './components/main/Header';
 import Home from './components/main/Home';
 import Checkout from './components/cart/Checkout';
+import CheckoutProduct from './components/cart/CheckoutProduct';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Route>
             <Route path='/checkout'>
               <Checkout />
+              <CheckoutProduct />
             </Route>
           </Switch> 
         </div>
