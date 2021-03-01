@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../../contexts/StateContext';
 import amazone from '../../images/logo/amazone-white.png';
 
 // Icons
@@ -11,6 +12,9 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import '../../styles/main/Header.css';
 
 export default function Header() {
+  const [state] = useStateValue();
+  const { cart } = state;
+
   return (
     <div className='header'>
       <Link to='/'>
@@ -52,7 +56,12 @@ export default function Header() {
           <div className='header-option-cart'>
             {/* Cart */}
             <ShoppingBasketIcon />
-            <span className='header-option-line-two header-cart-count'>0</span>
+            <span className='header-option-line-two header-cart-count'>
+              {
+                cart
+                ?.length
+              }
+            </span>
           </div>
         </Link>
       </div>
