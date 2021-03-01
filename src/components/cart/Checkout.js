@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react';
 import Subtotal from '../cart/Subtotal';
-import ad from '../../images/ads/ocean-credit-card.jpg';
+import advertisement from '../../images/ads/ocean-credit-card.jpg';
 
 // Styles
 import '../../styles/cart/Checkout.css';
@@ -12,7 +12,7 @@ export default function Checkout() {
       <div className='checkout-left'>
         <img
           className='checkout-ad'
-          src={ad}
+          src={advertisement}
           alt='Ocean Credit Card Ad'
         />
         <div>
