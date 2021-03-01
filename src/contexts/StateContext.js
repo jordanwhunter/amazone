@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 
-export default function StateContext() {
-  return (
-    <div>
-     Hello world. I am the StateContext provider. 
-    </div>
-  )
-};
+// Prepares the data layer to send items to
+export const StateContext = createContext();
+
+// Wrap app and provide data layer parameters
+export const StateProvider = ({ reducer, initialState, children }) => (
+  <StateContext.Provider value={useReducer(reducer, initialState)}>
+    {children}
+  </StateContext.Provider>
+);
+
+// Pulls information from data layer
+export const useStateValue = () => useContext(StateContext);
