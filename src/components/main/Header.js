@@ -57,10 +57,7 @@ export default function Header() {
             {/* Cart */}
             <ShoppingBasketIcon />
             <span className='header-option-line-two header-cart-count'>
-              {
-                cart
-                ?.length
-              }
+              {cart?.length}
             </span>
           </div>
         </Link>
