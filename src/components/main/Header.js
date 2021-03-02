@@ -37,11 +37,13 @@ export default function Header() {
 
       {/* Children */}
       <div className='header-nav'>
-        <div className='header-option'>
-          {/* Hello / Sign In */}
-          <span className='header-option-line-one'>Hello</span>
-          <span className='header-option-line-two'>Log In</span>
-        </div>
+        <Link to='/login'>
+          <div className='header-option'>
+            {/* Hello / Sign In */}
+            <span className='header-option-line-one'>Hello</span>
+            <span className='header-option-line-two'>Log In</span>
+          </div>
+        </Link>
         <div className='header-option'>
           {/* Returns & Orders */}
           <span className='header-option-line-one'>Returns</span>
