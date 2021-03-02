@@ -1,5 +1,5 @@
 // Dependencies
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import amazone from '../../images/logo/amazone-bw.png';
 
@@ -7,6 +7,9 @@ import amazone from '../../images/logo/amazone-bw.png';
 import '../../styles/authentication/Login.css';
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
   return (
     <div className='login'>
       <Link to='/'>
@@ -21,10 +24,22 @@ export default function Login() {
         <h1>Log In</h1>
         <form>
           <h5>Email</h5>
-          <input type='text'/>
+          <input 
+            type='text'
+            value={email}
+            onChange={
+              event => setEmail(event.target.value)
+            }
+          />
 
           <h5>Password</h5>
-          <input type='password'/>
+          <input 
+            type='password'
+            value={password}
+            onChange={
+              event => setPassword(event.target.value)
+            }
+          />
 
           <button className='login-button'>Log In</button>
         </form>
