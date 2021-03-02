@@ -4,6 +4,12 @@
   margin-bottom: 20px;
 }
 
+.checkout-product-image {
+  object-fit: contain;
+  width: 180px;
+  height: 180px;
+}
+
 .checkout-product-info {
   padding-left: 20px;
 }
@@ -16,8 +22,11 @@
   color: #111;
 }
 
-.checkout-product-image {
-  object-fit: contain;
-  width: 180px;
-  height: 180px;
+.checkout-product-title {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.checkout-product-rating {
+  display: flex;
 }
