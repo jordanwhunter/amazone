@@ -29,7 +29,7 @@ export default function CheckoutProduct({ id, title, image, price, rating }) {
             <p>{'⭐️'.repeat(rating)}</p>
           </small>
         </div>
-        {title && <button className='btn'>Remove from Cart</button>}
+        {title && <button>Remove from Cart</button>}
       </div>
     </div>
   )
