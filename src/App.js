@@ -16,16 +16,19 @@ function App() {
         reducer={reducer}
       >
         <div className='app'>
-          <Header />
           <Switch>
             {/* Authentication routes */}
             <Route path='/login' component={Login} />
 
             {/* Main page route */}
-            <Route exact path='/' component={Home} />
+            <Route exact path='/'>
+            <Header />
+            <Home />
+            </Route>
 
             {/* Checkout route */}
             <Route path='/checkout'>
+              <Header />
               <Checkout />
               <CheckoutProduct />
             </Route>
