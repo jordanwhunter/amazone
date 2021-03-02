@@ -10,6 +10,14 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
+  const logIn = event => {
+    event.preventDefault();
+  }
+
+  const register = event => {
+    event.preventDefault();
+  }
+
   return (
     <div className='login'>
       <Link to='/'>
@@ -41,14 +49,25 @@ export default function Login() {
             }
           />
 
-          <button className='login-button'>Log In</button>
+          <button 
+            className='login-button'
+            type='submit'
+            onClick={logIn}
+          >
+            Log In
+          </button>
         </form>
 
         <p>
           By logging in, you agree to Amazone's Conditions of Use and Sale. Please see our Privacy Notice, our Cookies Notice, and our Interest-Based Ads Notice.
         </p>
 
-        <button className='register-button'>Create Your Amazone Account</button>
+        <button 
+          className='register-button'
+          onClick={register}
+        >
+          Create Your Amazone Account
+        </button>
       </div>
     </div>
   )
