@@ -20,8 +20,10 @@ export default function reducer(state, action) {
       const index = state.cart.findIndex(
         (cartItem) => cartItem.id === id
       );
+      // copy of current cart
       let newCart = [...state.cart];
-
+      
+      // go to copy of cart and splice at the index point. only display items in cart minus specific index, and shift all other items down an index spot 
       if (index >= 0) {
         newCart.splice(index, 1);
       } else {
