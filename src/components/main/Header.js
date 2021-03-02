@@ -40,7 +40,7 @@ export default function Header() {
         <div className='header-option'>
           {/* Hello / Sign In */}
           <span className='header-option-line-one'>Hello</span>
-          <span className='header-option-line-two'>Sign in</span>
+          <span className='header-option-line-two'>Log In</span>
         </div>
         <div className='header-option'>
           {/* Returns & Orders */}
