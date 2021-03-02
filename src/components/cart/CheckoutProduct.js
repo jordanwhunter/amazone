@@ -1,10 +1,21 @@
 // Dependencies
 import React from 'react';
+import { useStateValue } from '../../contexts/StateContext';
 
 // Styles
 import '../../styles/cart/CheckoutProduct.css';
 
 export default function CheckoutProduct({ id, title, image, price, rating }) {
+  const [dispatch] = useStateValue();
+  
+  const removeFromCart = () => {
+    // remove item from cart itself
+    dispatch({
+      type: 'REMOVE_FROM_CART',
+      id: id,
+    })
+  };
+  
   return (
     <div className='checkout-product'>
       
@@ -29,7 +40,7 @@ export default function CheckoutProduct({ id, title, image, price, rating }) {
             <p>{'⭐️'.repeat(rating)}</p>
           </small>
         </div>
-        {title && <button>Remove from Cart</button>}
+        {title && <button onClick={removeFromCart}>Remove from Cart</button>}
       </div>
     </div>
   )
