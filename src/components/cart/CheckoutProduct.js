@@ -7,6 +7,7 @@ import '../../styles/cart/CheckoutProduct.css';
 
 export default function CheckoutProduct({ id, title, image, price, rating }) {
   const [state, dispatch] = useStateValue();
+  console.log(state)
   
   const removeFromCart = () => {
     // remove item from cart itself
