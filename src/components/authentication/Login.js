@@ -30,7 +30,7 @@ export default function Login() {
         </form>
 
         <p>
-          By logging in, you agree to Amazone's Conditions of Use and Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
+          By logging in, you agree to Amazone's Conditions of Use and Sale. Please see our Privacy Notice, our Cookies Notice, and our Interest-Based Ads Notice.
         </p>
 
         <button className='register-button'>Create Your Amazone Account</button>
