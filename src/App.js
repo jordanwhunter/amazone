@@ -11,6 +11,7 @@ import CheckoutProduct from './components/cart/CheckoutProduct';
 import Login from './components/authentication/Login';
 import Signup from './components/authentication/Signup';
 import Prime from './components/authentication/YourPrime';
+import UpdateProfile from './components/authentication/UpdateProfile';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
               <PrivateRoute path='/your-prime' component={Prime}/>
+              <PrivateRoute path='/update-profile' component={UpdateProfile}/>
 
               {/* Main page route */}
               <Route exact path='/'>
