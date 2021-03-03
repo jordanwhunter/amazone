@@ -44,7 +44,7 @@ export default function YourPrime() {
           <button
             className='update-profile-button'
           >
-            Update profile
+            Update Profile
           </button>
         </Link>
       </div>
