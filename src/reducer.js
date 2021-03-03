@@ -1,5 +1,6 @@
 export const initialState = {
   cart: [],
+  user: null
 };
 
 // Selector
@@ -30,13 +31,16 @@ export default function reducer(state, action) {
         console.warn(
           `Cannot remove product ID ${id} - does not exist in cart`
         )
-      };
-      
+      }; 
       return {
         ...state,
         cart: newCart
       };
-
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.user
+      }
     default:
       return state
   };
