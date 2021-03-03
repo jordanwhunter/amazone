@@ -111,12 +111,27 @@ export default function Header() {
           <span className='header-option-line-one'>Returns</span>
           <span className='header-option-line-two'>& Orders</span>
         </div>
-        <div className='header-option'>
-          {/* Your Prime */}
-          <span className='header-option-line-one'>Your</span>
-          <span className='header-option-line-two'>Prime</span>
-        </div>
-        <Link to='/checkout'>
+        <Link 
+          to='/your-prime'
+          style={{
+            textDecoration: 'none',
+            color: 'white'
+          }}
+        >
+          <div className='header-option'>
+            {/* Your Prime */}
+            <span className='header-option-line-one your-prime'>Your</span>
+            <span className='header-option-line-two your-prime'>Prime</span>
+          </div>
+        </Link>
+        
+        <Link 
+          to='/checkout'
+          style={{
+            textDecoration: 'none',
+            color: 'white'
+          }}
+        >
           <div className='header-option-cart'>
             {/* Cart */}
             <ShoppingBasketIcon />
