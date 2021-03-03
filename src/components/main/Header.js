@@ -1,7 +1,9 @@
 // Dependencies
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { useStateValue } from '../../contexts/StateContext';
+import { useAuth } from '../../contexts/AuthContext';
+import { auth } from '../../firebase';
 import amazone from '../../images/logo/amazone-white.png';
 
 // Icons
@@ -12,8 +14,68 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import '../../styles/main/Header.css';
 
 export default function Header() {
-  const [state] = useStateValue();
-  const { cart } = state;
+  const [error, setError] = useState('');
+
+  const [{ cart, user }, dispatch] = useStateValue();
+  const { logout } = useAuth();
+
+  const history = useHistory();
+
+  const handleLogout = async () => {
+    setError('')
+    try {
+      await logout()
+      history.push('/')
+      console.log('Logged out successfully')
+    } catch {
+      setError('Failure logging out')
+      console.warn(error)
+    }
+  };
+
+  const logUser = () => {
+    if (user) {
+      return (
+        <button
+          className='logout-button' 
+          variant='link'
+          onClick={handleLogout}
+        >
+          Log Out
+        </button>
+      )
+    } else {
+      return (
+        <Link 
+          to='/login'
+          style={{
+            textDecoration: 'none',
+            color: 'white'
+          }}
+        >
+          Log In
+        </Link>
+      )
+    }
+  };
+
+  const authedUser = logUser();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: 'SET_USER',
+          user: authUser
+        })
+      } else {
+        dispatch({
+          type: 'SET_USER',
+          user: null
+        })
+      }
+    })
+  }, [dispatch])
 
   return (
     <div className='header'>
@@ -37,13 +99,13 @@ export default function Header() {
 
       {/* Children */}
       <div className='header-nav'>
-        <Link to='/login'>
-          <div className='header-option'>
-            {/* Hello / Sign In */}
-            <span className='header-option-line-one'>Hello</span>
-            <span className='header-option-line-two'>Log In</span>
-          </div>
-        </Link>
+        
+        <div className='header-option'>
+          {/* Hello / Sign In */}
+          <span className='header-option-line-one'>Hello</span>
+          <span className='header-option-line-two'>{authedUser}</span>
+        </div>
+        
         <div className='header-option'>
           {/* Returns & Orders */}
           <span className='header-option-line-one'>Returns</span>
