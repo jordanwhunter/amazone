@@ -1,4 +1,8 @@
+// Dependencies
 import React from 'react'
+
+// Styles
+import '../../styles/authentication/YourPrime.css';
 
 export default function YourPrime() {
   return (
