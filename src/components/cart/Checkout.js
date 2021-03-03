@@ -9,7 +9,7 @@ import advertisement from '../../images/ads/ocean-credit-card.jpg';
 import '../../styles/cart/Checkout.css';
 
 export default function Checkout() {
-  const [{ cart }] = useStateValue();
+  const [{ cart, user }] = useStateValue();
 
   return (
     <div className='checkout'>
@@ -20,9 +20,8 @@ export default function Checkout() {
           alt='Ocean Credit Card Ad'
         />
         <div>
-          <h2 className='checkout-title'>
-            Your Shopping Cart
-          </h2>
+          {user && <h3 className='checkout-title-hidden'>Hello, {user?.email}:</h3>}
+          <h2 className='checkout-title'>Your Shopping Cart</h2>
           {cart.map(item => (
             <CheckoutProduct
               id={item.id}
