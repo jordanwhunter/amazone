@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StateProvider } from './contexts/StateContext';
 import { AuthProvider } from './contexts/AuthContext';
 import reducer, { initialState } from './reducer';
+import PrivateRoute from './components/authentication/PrivateRoute';
 import Header from './components/main/Header';
 import Home from './components/main/Home';
 import Checkout from './components/cart/Checkout';
@@ -24,7 +25,7 @@ function App() {
               {/* Authentication routes */}
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
-              <Route path='/your-prime' component={Prime}/>
+              <PrivateRoute path='/your-prime' component={Prime}/>
 
               {/* Main page route */}
               <Route exact path='/'>
