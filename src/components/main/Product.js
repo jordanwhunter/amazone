@@ -8,9 +8,10 @@ import { useStateValue } from '../../contexts/StateContext';
 import '../../styles/main/Product.css';
 
 export default function Product({ id, title, image, price, rating }) {
-  const [state, dispatch] = useStateValue();
+  // removed state for now: [state, dispatch]
+  const [, dispatch] = useStateValue();
 
-  console.log('cart contains:', state.cart)
+  // console.log(state)
 
   const addToCart = () => {
     // dispatch item into data layer
@@ -26,6 +27,8 @@ export default function Product({ id, title, image, price, rating }) {
     })
   };
   
+  
+
   return (
     <div className='product'>
       <div className='product-info'>
