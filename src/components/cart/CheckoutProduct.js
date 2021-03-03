@@ -6,8 +6,7 @@ import { useStateValue } from '../../contexts/StateContext';
 import '../../styles/cart/CheckoutProduct.css';
 
 export default function CheckoutProduct({ id, title, image, price, rating }) {
-  const [state, dispatch] = useStateValue();
-  console.log(state)
+  const [, dispatch] = useStateValue();
   
   const removeFromCart = () => {
     // remove item from cart itself
