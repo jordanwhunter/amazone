@@ -9,6 +9,7 @@ import Checkout from './components/cart/Checkout';
 import CheckoutProduct from './components/cart/CheckoutProduct';
 import Login from './components/authentication/Login';
 import Signup from './components/authentication/Signup';
+import Prime from './components/authentication/YourPrime';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               {/* Authentication routes */}
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
+              <Route path='/your-prime' component={Prime}/>
 
               {/* Main page route */}
               <Route exact path='/'>
