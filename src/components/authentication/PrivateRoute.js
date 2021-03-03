@@ -1,9 +1,17 @@
+// Dependencies
 import React from 'react'
+import { Redirect, Route } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 
-export default function PrivateRoute() {
+export default function PrivateRoute({ component: Component, ...rest }) {
+  const { currentUser } = useAuth();
+  
   return (
-    <div>
-      Hello world. I will be the PrivateRoute component.
-    </div>
+    <Route
+      {...rest}
+      render={props => {
+        return currentUser ? <Component {...props} /> : <Redirect to='/login' />
+      }}
+    />
   )
 };
