@@ -60,6 +60,21 @@
   font-weight: 800;
 }
 
+.header-option-line-two:link {
+  background-color: transparent
+}
+
+.logout-button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .header-option-cart {
   display: flex;
   align-items: center;
