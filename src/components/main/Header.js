@@ -101,7 +101,13 @@ export default function Header() {
         
         <div className='header-option'>
           {/* Hello / Sign In */}
-          <span className='header-option-line-one'>Hello</span>
+          <span className='header-option-line-one'>
+            Hello {
+              !user
+                ? 'Guest'
+                : user.email
+            }
+          </span>
           <span className='header-option-line-two'>{authedUser}</span>
         </div>
         
