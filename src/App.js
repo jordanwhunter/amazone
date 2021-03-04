@@ -12,6 +12,7 @@ import Login from './components/authentication/Login';
 import Signup from './components/authentication/Signup';
 import Prime from './components/authentication/YourPrime';
 import UpdateProfile from './components/authentication/UpdateProfile';
+import ForgotPassword from './components/authentication/ForgotPassword';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               {/* Authentication routes */}
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
+              <Route path='/forgot-password' component={ForgotPassword} />
               <PrivateRoute path='/your-prime' component={Prime} />
               <PrivateRoute path='/update-profile' component={UpdateProfile} />
 
