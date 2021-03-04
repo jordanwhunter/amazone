@@ -86,7 +86,14 @@ export default function Login() {
             Log In
           </button>
         </form>
-
+        <p className='forgot-password-link'>
+          <Link 
+            to='/forgot-password'
+            className='redirect-forgot-password'
+          >
+            Forgot password?
+          </Link>
+        </p>
         <p>
           By logging in, you agree to Amazone's fake Conditions of Use and Sale. Please see our Privacy Notice, our Cookies Notice, and our Interest-Based Ads Notice.
         </p>
