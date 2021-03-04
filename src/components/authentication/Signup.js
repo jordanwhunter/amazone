@@ -58,8 +58,9 @@ export default function Login() {
         <form>
           <h5>Email</h5>
           <input 
-            type='text'
+            type='email'
             value={email}
+            required
             onChange={
               event => setEmail(event.target.value)
             }
@@ -69,6 +70,7 @@ export default function Login() {
           <input 
             type='password'
             value={password}
+            required
             onChange={
               event => setPassword(event.target.value)
             }
@@ -78,6 +80,7 @@ export default function Login() {
           <input 
             type='password'
             value={confirmedPassword}
+            required
             onChange={
               event => setConfirmedPassword(event.target.value)
             }
@@ -98,7 +101,12 @@ export default function Login() {
         </p>
       </div>
       <p className='redirect-to-login'>
-        Already have an account? <Link to='/login'>Log In</Link>
+        Already have an account? <Link 
+          to='/login'
+          className='login-redirect'
+        >
+          Log In
+        </Link>
       </p>
     </div>
   )
