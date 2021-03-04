@@ -13,6 +13,7 @@ import Signup from './components/authentication/Signup';
 import Prime from './components/authentication/YourPrime';
 import UpdateProfile from './components/authentication/UpdateProfile';
 import ForgotPassword from './components/authentication/ForgotPassword';
+import Payment from './components/processing/Payment';
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
                 <Checkout />
                 <CheckoutProduct />
               </Route>
+
+              {/* Payment processing routes */}
+              <PrivateRoute path='/payment' component={Payment}/>
             </Switch> 
           </div>
         </StateProvider>
