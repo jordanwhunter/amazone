@@ -1,0 +1,72 @@
+.update-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.update-profile-logo {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.update-profile-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: fit-content;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.update-profile-container>h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.update-profile-container>form>h5 {
+  margin-bottom: 5px;
+}
+
+.update-profile-container>form>input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 98%;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+}
+
+.button-update-profile {
+  background: #f0c14b;
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+}
+
+.redirect-to-your-prime {
+  margin-top: 15px;
+  font-size: 12px;
+  
+}
+
+.redirect-your-prime {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  text-decoration: none;
+  color: black
+}
