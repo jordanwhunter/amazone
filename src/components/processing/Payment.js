@@ -49,7 +49,12 @@ export default function Payment() {
 
           {/* Payment section - payment method */}
           <div className='payment-section'>
-            
+            <div className='payment-title'>
+              <h3>Payment Method: </h3>
+            </div>
+            <div className='payment-details'>
+              {/* Stripe integration */}
+            </div>
           </div>
         </div>
       </div>
