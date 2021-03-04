@@ -1,21 +1,56 @@
 // Dependencies
 import React from 'react';
 import Header from '../main/Header';
+import CheckoutProduct from '../cart/CheckoutProduct';
+import { useStateValue } from '../../contexts/StateContext';
 
 // Styles
 import '../../styles/processing/Payment.css';
 
 export default function Payment() {
+  const [{ cart, user }] = useStateValue();
+  
   return (
     <>
       <Header />
       <div className='payment'>
         <div className='payment-container'>
           {/* Payment section - delivery address */}
+          <div className='payment-section'>
+            <div className='payment-title'>
+              <h3>Delivery Address: </h3>
+            </div>
+            <div className='payment-address'>
+              <p>{user.email}</p>
+              <p>777 Test Address</p>
+              <p>New York, NY 10109</p>
+            </div>
+          </div>
 
           {/* Payment section - review items */}
+          <div className='payment-section'>
+            <div className='payment-title'>
+              <h3>Review Items and Delivery: </h3>
+            </div>
+            <div className='payment-items'>
+              { 
+                cart.map(item => (
+                  <CheckoutProduct
+                    id={item.id}
+                    title={item.title}
+                    image={item.image}
+                    price={item.price}
+                    rating={item.rating} 
+                  />
+                ))
+              }
+            </div>
+          </div>
 
           {/* Payment section - payment method */}
+          <div className='payment-section'>
+            
+          </div>
         </div>
       </div>
     </>
