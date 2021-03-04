@@ -47,6 +47,18 @@
   font-size: 12px;
 }
 
+.forgot-password-link {
+  text-align: center;
+}
+
+.redirect-forgot-password {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  text-decoration: none;
+  color: black
+}
+
 .error-message {
   text-align: center;
   color: red;
