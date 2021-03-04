@@ -9,8 +9,14 @@ export default function Payment() {
   return (
     <>
       <Header />
-      <div>
-        Hello world. I'm the Payment component.
+      <div className='payment'>
+        <div className='payment-container'>
+          {/* Payment section - delivery address */}
+
+          {/* Payment section - review items */}
+
+          {/* Payment section - payment method */}
+        </div>
       </div>
     </>
   )
