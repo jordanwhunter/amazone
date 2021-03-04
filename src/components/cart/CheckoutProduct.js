@@ -18,12 +18,14 @@ export default function CheckoutProduct({ id, title, image, price, rating }) {
   
   return (
     <div className='checkout-product'>
-      
-      <img
-        className='checkout-product-image'
-        src={image} 
-        alt={title}
-      />
+      {
+        id && 
+          <img
+            className='checkout-product-image'
+            src={image} 
+            alt={title}
+          />
+      }
       <div className='checkout-product-info'>
         <p className='checkout-product-title'>{title}</p>
         <p className='checkout-product-price'>
