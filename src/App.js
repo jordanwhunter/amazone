@@ -26,8 +26,8 @@ function App() {
               {/* Authentication routes */}
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
-              <PrivateRoute path='/your-prime' component={Prime}/>
-              <PrivateRoute path='/update-profile' component={UpdateProfile}/>
+              <PrivateRoute path='/your-prime' component={Prime} />
+              <PrivateRoute path='/update-profile' component={UpdateProfile} />
 
               {/* Main page route */}
               <Route exact path='/'>
