@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from '../../contexts/StateContext';
 import { getCartTotal } from '../../reducer';
@@ -10,6 +11,8 @@ import '../../styles/cart/Subtotal.css';
 export default function Subtotal() {
   const [state] = useStateValue();
   const { cart } = state;
+
+  const history = useHistory();
 
   return (
     <div className='subtotal'>
@@ -33,7 +36,7 @@ export default function Subtotal() {
         prefix={'$'}
       />
       
-      <button>Proceed to Checkout</button>
+      <button onClick={event => history.push('/payment')}>Proceed to Checkout</button>
     </div>
   )
 };
