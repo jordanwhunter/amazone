@@ -1,8 +1,9 @@
 // Dependencies
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useStateValue } from '../../contexts/StateContext';
 import Header from '../main/Header';
 import CheckoutProduct from '../cart/CheckoutProduct';
-import { useStateValue } from '../../contexts/StateContext';
 
 // Styles
 import '../../styles/processing/Payment.css';
@@ -15,6 +16,14 @@ export default function Payment() {
       <Header />
       <div className='payment'>
         <div className='payment-container'>
+          <h1>
+            Checkout (
+              <Link to='/checkout'>
+                {cart?.length} Items
+              </Link>
+            )
+          </h1>
+
           {/* Payment section - delivery address */}
           <div className='payment-section'>
             <div className='payment-title'>
