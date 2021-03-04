@@ -97,7 +97,7 @@ export default function Login() {
         </form>
 
         <p>
-          By signing up, you agree to Amazone's fake Conditions of Use and Sale. Please see our Privacy Notice, our Cookies Notice, and our Interest-Based Ads Notice.
+          By signing up, you acknowledge that the Amazone platform is for demoing purposes only and not a legitimate online retailer. The items depicted are not for sale. Please do not share any sensitive credit card or residence information when demoing the platform's payment processing functionality.
         </p>
       </div>
       <p className='redirect-to-login'>
