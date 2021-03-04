@@ -99,7 +99,7 @@ export default function Login() {
         </p>
 
       </div>
-      <p className='redirect-to-login'>
+      <p className='redirect-to-signup'>
         Don't have an account? <Link 
           to='/signup'
           className='signup-redirect'
