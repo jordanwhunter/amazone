@@ -59,8 +59,9 @@ export default function Login() {
         <form>
           <h5>Email</h5>
           <input 
-            type='text'
+            type='email'
             value={email}
+            required
             onChange={
               event => setEmail(event.target.value)
             }
@@ -70,6 +71,7 @@ export default function Login() {
           <input 
             type='password'
             value={password}
+            required
             onChange={
               event => setPassword(event.target.value)
             }
@@ -91,7 +93,12 @@ export default function Login() {
 
       </div>
       <p className='redirect-to-login'>
-        Don't have an account? <Link to='/signup'>Sign Up</Link>
+        Don't have an account? <Link 
+          to='/signup'
+          className='signup-redirect'
+        >
+          Sign Up
+        </Link>
       </p>
     </div>
   )
