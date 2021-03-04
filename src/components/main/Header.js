@@ -8,8 +8,7 @@ import amazone from '../../images/logo/amazone-white.png';
 
 // Icons
 import SearchIcon from '@material-ui/icons/Search';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 // Styles
 import '../../styles/main/Header.css';
 
@@ -134,7 +133,7 @@ export default function Header() {
         >
           <div className='header-option-cart'>
             {/* Cart */}
-            <ShoppingBasketIcon />
+            <ShoppingCartIcon />
             <span className='header-option-line-two header-cart-count'>
               {cart?.length}
             </span>
