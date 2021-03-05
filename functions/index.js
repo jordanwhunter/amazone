@@ -2,6 +2,7 @@ const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const { response } = require("express");
 
 dotenv.config();
 
@@ -17,6 +18,22 @@ app.use(express.json());
 
 // API routes
 app.get("/", (req, res) => res.status(200).send("Hello World"));
+
+app.post("/payments/create", async (req, res) => {
+  // Could also use query.params
+  const total = req.query.total;
+
+  console.log("Payment Request Received for: ", total)
+
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: total, //sub-units of currency
+    currency: "USD",
+  });
+
+  res.status(201).send({
+    clientSecret: paymentIntent.client_secret,
+  })
+});
 
 // Listen command
 exports.api = functions.https.onRequest(app);
