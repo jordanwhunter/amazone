@@ -16,10 +16,10 @@ import Prime from './components/authentication/YourPrime';
 import UpdateProfile from './components/authentication/UpdateProfile';
 import ForgotPassword from './components/authentication/ForgotPassword';
 import Payment from './components/processing/Payment';
-import Orders from './components/processing/Orders';
+// import Orders from './components/processing/Orders';
 
 // Publishable Stripe test key to tokenize payment information (can't make the API call alone). 
-const promise = loadStripe('pk_test_51IRgtrF4H7BoQAsZbmmkZPyDwpWbntAgAIFmsooJ4v5e2pG5R47vbCvEIvMJa5nm2uPuDGbLjktYMT6juYNqqM2B00dr67U4aJ');
+const promise = loadStripe(`${process.env.REACT_APP_STRIPE_TEST_API_KEY}`);
 
 function App() {
   return (
