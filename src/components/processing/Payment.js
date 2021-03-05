@@ -6,6 +6,7 @@ import axios from '../../axios';
 import { useStateValue } from '../../contexts/StateContext';
 import { getCartTotal } from '../../reducer';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { db } from '../../firebase';
 import Header from '../main/Header';
 import CheckoutProduct from '../cart/CheckoutProduct';
 
@@ -17,9 +18,9 @@ export default function Payment() {
   const [disabled, setDisabled] = useState(true);
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState('');
-  const [clientSecret, setClientSecret] = useState(true);
+  const [clientSecret, setClientSecret] = useState('');
 
-  const [{ cart, user }] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
 
   const history = useHistory();
 
@@ -40,6 +41,8 @@ export default function Payment() {
     getClientSecret();
   }, [cart]);
 
+  console.log('Secret: ', clientSecret)
+
   const handleSubmit = async event => {
     event.preventDefault();
 
@@ -49,13 +52,29 @@ export default function Payment() {
       payment_method: {
         card: elements.getElement(CardElement)
       } 
-    }).then(({ paymentIntent }) => { // paymentIntent = payment confirmation
+    }).then(({ paymentIntent }) => { 
+      // paymentIntent = payment confirmation
       
+      db
+        .collection('users')
+        .doc(user?.uid)
+        .collection('orders')
+        .doc(paymentIntent.id)
+        .set({
+          cart: cart,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created
+        })
+
       setSucceeded(true);
       setError(null);
       setProcessing(false);
 
-      history.replace('/orders')
+      dispatch({
+        type: 'EMPTY_CART'
+      });
+
+      history.replace('/orders');
     })
   };
 
