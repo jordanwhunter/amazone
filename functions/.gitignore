@@ -1,1 +1,8 @@
 node_modules/
+
+# API Keys
+.env
+
+# Firebase Serverless Hosting
+firebase-debug.log
+ui-debug.log
