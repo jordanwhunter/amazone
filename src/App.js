@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { StateProvider } from './contexts/StateContext';
 import { AuthProvider } from './contexts/AuthContext';
 import reducer, { initialState } from './reducer';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 import PrivateRoute from './components/authentication/PrivateRoute';
 import Header from './components/main/Header';
 import Home from './components/main/Home';
@@ -14,6 +16,10 @@ import Prime from './components/authentication/YourPrime';
 import UpdateProfile from './components/authentication/UpdateProfile';
 import ForgotPassword from './components/authentication/ForgotPassword';
 import Payment from './components/processing/Payment';
+import Orders from './components/processing/Orders';
+
+// Publishable Stripe test key to tokenize payment information (can't make the API call alone). 
+const promise = loadStripe('pk_test_51IRgtrF4H7BoQAsZbmmkZPyDwpWbntAgAIFmsooJ4v5e2pG5R47vbCvEIvMJa5nm2uPuDGbLjktYMT6juYNqqM2B00dr67U4aJ');
 
 function App() {
   return (
@@ -46,7 +52,10 @@ function App() {
               </Route>
 
               {/* Payment processing routes */}
-              <PrivateRoute path='/payment' component={Payment}/>
+              <Elements stripe={promise}>
+                <PrivateRoute path='/payment' component={Payment}/>
+              </Elements>
+              {/* <Route path='/orders' component={Orders}/> */}
             </Switch> 
           </div>
         </StateProvider>
