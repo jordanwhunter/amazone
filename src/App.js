@@ -16,7 +16,7 @@ import Prime from './components/authentication/YourPrime';
 import UpdateProfile from './components/authentication/UpdateProfile';
 import ForgotPassword from './components/authentication/ForgotPassword';
 import Payment from './components/processing/Payment';
-// import Orders from './components/processing/Orders';
+import Orders from './components/processing/Orders';
 
 // Publishable Stripe test key to tokenize payment information (can't make the API call alone). 
 const promise = loadStripe(`${process.env.REACT_APP_STRIPE_TEST_API_KEY}`);
@@ -51,11 +51,13 @@ function App() {
                 <CheckoutProduct />
               </Route>
 
+              <Route path='/orders' component={Orders}/>
+
               {/* Payment processing routes */}
               <Elements stripe={promise}>
                 <PrivateRoute path='/payment' component={Payment}/>
               </Elements>
-              {/* <Route path='/orders' component={Orders}/> */}
+              
             </Switch> 
           </div>
         </StateProvider>
