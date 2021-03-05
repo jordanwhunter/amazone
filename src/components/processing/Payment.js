@@ -39,7 +39,7 @@ export default function Payment() {
           {/* Payment section - review items */}
           <div className='payment-section'>
             <div className='payment-title'>
-              <h3>Review Items and Delivery: </h3>
+              <h3>Review Items: </h3>
             </div>
             <div className='payment-items'>
               { 
