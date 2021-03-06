@@ -9,6 +9,7 @@ import amazone from '../../images/logo/amazone-white.png';
 // Icons
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 // Styles
 import '../../styles/main/Header.css';
 
@@ -111,11 +112,19 @@ export default function Header() {
           <span className='header-option-line-two'>{authedUser}</span>
         </div>
         
-        <div className='header-option'>
-          {/* Returns & Orders */}
-          <span className='header-option-line-one'>Returns</span>
-          <span className='header-option-line-two'>& Orders</span>
-        </div>
+        <Link 
+          to='/orders'
+          style={{
+            textDecoration: 'none',
+            color: 'white'
+          }}
+        >
+          <div className='header-option'>
+            {/* Returns & Orders */}
+            <span className='header-option-line-one'>Returns</span>
+            <span className='header-option-line-two'>& Orders</span>
+          </div>
+        </Link>
         <Link 
           to='/your-prime'
           style={{
