@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import Header from '../main/Header';
 import amazone from '../../images/logo/amazone-bw.png';
 
 // Styles
@@ -27,6 +28,8 @@ export default function YourPrime() {
   };
 
   return (
+    <>
+    <Header />
     <div className='your-prime-div'>
       <Link to='/'>
         <img
@@ -63,5 +66,6 @@ export default function YourPrime() {
         Log Out
       </button>
     </div>
+    </>
   )
 };
