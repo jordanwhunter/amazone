@@ -2,7 +2,6 @@ const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const { response } = require("express");
 
 dotenv.config();
 
@@ -23,11 +22,11 @@ app.post("/payments/create", async (req, res) => {
   // Could also use query.params
   const total = req.query.total;
 
-  console.log("Payment Request Received for: ", total)
+  // console.log("Payment Request Received for: ", total);
 
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total, //sub-units of currency
-    currency: "USD",
+    currency: "usd",
   });
 
   res.status(201).send({
@@ -37,6 +36,3 @@ app.post("/payments/create", async (req, res) => {
 
 // Listen command
 exports.api = functions.https.onRequest(app);
-
-// Example endpoint
-// http://localhost:5001/ama-zone/us-central1/api
