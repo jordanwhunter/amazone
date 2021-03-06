@@ -1,3 +1,4 @@
+// Dependencies
 import React, { createContext, useContext, useReducer } from 'react';
 
 // Prepares the data layer to send items to

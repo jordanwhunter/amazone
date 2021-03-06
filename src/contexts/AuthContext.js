@@ -1,3 +1,4 @@
+// Dependencies
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { auth } from '../firebase';
 
@@ -55,7 +56,6 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={value}>
-      {/* {!loading && children} */}
       {children}
     </AuthContext.Provider>
   )
