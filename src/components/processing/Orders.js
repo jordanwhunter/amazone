@@ -1,5 +1,6 @@
 // Dependencies
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useStateIfMounted } from 'use-state-if-mounted';
 import { db } from '../../firebase';
 import { useStateValue } from '../../contexts/StateContext';
 import Header from '../main/Header';
@@ -9,9 +10,9 @@ import Order from '../processing/Order';
 import '../../styles/processing/Orders.css';
 
 export default function Orders() {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useStateIfMounted([]);
   
-  const [{ cart, user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     if (user) {
