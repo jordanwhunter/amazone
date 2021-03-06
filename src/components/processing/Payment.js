@@ -28,6 +28,12 @@ export default function Payment() {
 
   const elements = useElements();
   
+  const clearCart = () => {
+    dispatch({
+      type: 'EMPTY_CART'
+    });
+  };
+
   useEffect(() => {
     // Customer secret needs to be provided by Stripe which allows us to charge user
     const getClientSecret = async () => {
@@ -48,7 +54,7 @@ export default function Payment() {
 
     setProcessing(true);
 
-    const payload = await stripe.confirmCardPayment(clientSecret, {
+    await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement)
       } 
@@ -65,14 +71,12 @@ export default function Payment() {
           amount: paymentIntent.amount,
           created: paymentIntent.created
         })
-
+        
       setSucceeded(true);
       setError(null);
       setProcessing(false);
-
-      dispatch({
-        type: 'EMPTY_CART'
-      });
+      
+      clearCart();
 
       history.replace('/orders');
     })
