@@ -5,7 +5,7 @@ import { useStateValue } from '../../contexts/StateContext';
 // Styles
 import '../../styles/cart/CheckoutProduct.css';
 
-export default function CheckoutProduct({ id, title, image, price, rating }) {
+export default function CheckoutProduct({ id, title, image, price, rating, hideButton }) {
   const [, dispatch] = useStateValue();
   
   const removeFromCart = () => {
@@ -42,7 +42,8 @@ export default function CheckoutProduct({ id, title, image, price, rating }) {
             <p>{'⭐️'.repeat(rating)}</p>
           </small>
         </div>
-        {title && <button onClick={removeFromCart}>Remove from Cart</button>}
+
+        {!hideButton && (title && <button onClick={removeFromCart}>Remove from Cart</button>)}
       </div>
     </div>
   )
