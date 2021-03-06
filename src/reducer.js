@@ -36,16 +36,16 @@ export default function reducer(state, action) {
         ...state,
         cart: newCart
       };
+    case 'EMPTY_CART':
+      return {
+        ...state,
+        cart: []
+      };
     case 'SET_USER':
       return {
         ...state,
         user: action.user
-      }
-    case 'EMPTY_CART':
-      return {
-        ...state,
-        basket: []
-      }
+      };
     default:
       return state
   };
