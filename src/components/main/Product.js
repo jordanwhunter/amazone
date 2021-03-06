@@ -2,8 +2,6 @@
 import React from 'react';
 import { useStateValue } from '../../contexts/StateContext';
 
-// Icons
-
 // Styles
 import '../../styles/main/Product.css';
 
@@ -26,9 +24,7 @@ export default function Product({ id, title, image, price, rating }) {
       }
     })
   };
-  
-  
-
+ 
   return (
     <div className='product'>
       <div className='product-info'>
