@@ -47,7 +47,7 @@ export default function Payment() {
     getClientSecret();
   }, [cart]);
 
-  console.log('Secret: ', clientSecret)
+  // console.log('Secret: ', clientSecret)
 
   const handleSubmit = async event => {
     event.preventDefault();
