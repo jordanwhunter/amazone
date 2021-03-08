@@ -89,7 +89,7 @@
   
   ## License
   
-  MIT
+  <sub><img width="25px" src="https://user-images.githubusercontent.com/69367907/110377669-ae830e80-8022-11eb-8b8e-483f4ac522df.png"></sub> <sup>MIT</sup>
   
   ---
   
