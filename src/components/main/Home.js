@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import hero from '../../images/hero/2021-whm-hero.jpg'
+import hero from '../../images/hero/2021-iwd-hero.jpg'
 import Product from './Product';
 import ctci from '../../images/products/ctci.png';
 import sideTrak from '../../images/products/sideTrack.jpg';
